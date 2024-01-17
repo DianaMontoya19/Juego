@@ -64,7 +64,7 @@ public class Movimiento : MonoBehaviour
         }
 
 
-        //if (Input.GetKeyDown(KeyCode.Space) && puedoSaltar)
+        //if (salto == 1 && puedoSaltar)
         //    {
         //        Vector3 movimientoFuerza = Vector3.up * fuerzaSalto;
         //        rb.AddForce(movimientoFuerza, ForceMode.Impulse);
