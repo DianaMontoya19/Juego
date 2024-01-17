@@ -11,7 +11,7 @@ public class Colision : MonoBehaviour
   
     public MeshRenderer myMeshRenderer;
     public Movimiento myMovimiento;
-
+    public GameObject Jugador;
 
    
 
@@ -20,7 +20,9 @@ public class Colision : MonoBehaviour
     { 
        
         ListaCamaras[0].gameObject.SetActive(true);
+        ListaCamaras[2].gameObject.SetActive(true);
         ListaCamaras[1].gameObject.SetActive(false);
+        Jugador = Jugador.gameObject;
         desactivar();
 
 
@@ -31,12 +33,12 @@ public class Colision : MonoBehaviour
     {
 
 
-        if (collision.gameObject.CompareTag("deteccion"))
+        if (collision.gameObject.CompareTag("Jugador"))
         {
 
             myMeshRenderer.enabled = false;
 
-            gameObject.transform.position = new Vector3(-10.0500002f, 3.03999996f, 11.3400002f);
+            Jugador.transform.position = new Vector3(-10.0500002f, 3.03999996f, 11.3400002f);
 
             myMeshRenderer.enabled = true;
 
@@ -45,6 +47,8 @@ public class Colision : MonoBehaviour
             ListaCamaras[0].gameObject.SetActive(false);
 
             myMovimiento.enabled = false;
+
+
 
             activar();
 
