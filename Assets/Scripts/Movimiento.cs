@@ -6,8 +6,11 @@ public class Movimiento : MonoBehaviour
 {
 
     // Start is called before the first frame update
-    //public GameObject[] Jugador;
-   
+    ////public GameObject[] Jugador;
+    //public string horizontalAxis;
+    public string horizontalAxis;
+    public string verticalAxis;
+
     public float velocidad;
     public float fuerzaSalto = 5f;
     private Vector3 gravedad = new Vector3(0f, 9.8f, 0f);
@@ -17,8 +20,7 @@ public class Movimiento : MonoBehaviour
     private bool puedoSaltar;
     public LayerMask layerSuelo;
 
-    //public Material material1;
-    //public GameObject Jugador;
+
 
 
     private Rigidbody rb;
@@ -36,9 +38,9 @@ public class Movimiento : MonoBehaviour
        
         
 
-            float movimientoHor = Input.GetAxisRaw("Horizontal");
+            float movimientoHor = Input.GetAxisRaw(horizontalAxis);
             float xSpeed = movimientoHor * velocidad;
-            float movimientoVer = Input.GetAxisRaw("Vertical");
+            float movimientoVer = Input.GetAxisRaw(verticalAxis);
             float zSpeed = movimientoVer * velocidad;
 
             Vector3 movimiento = new Vector3(zSpeed, rb.velocity.y, -xSpeed);
@@ -52,13 +54,22 @@ public class Movimiento : MonoBehaviour
 
     private void Update()
     {
-       
-            if (Input.GetKeyDown(KeyCode.Space) && puedoSaltar)
-            {
-                Vector3 movimientoFuerza = Vector3.up * fuerzaSalto;
-                rb.AddForce(movimientoFuerza, ForceMode.Impulse);
-            }
-            puedoSaltar = Physics.Raycast(transform.position, Vector3.down, 1f, layerSuelo);
+        if(puedoSaltar)
+        {
+            float salto = Input.GetAxisRaw("Jump");
+            //float speed = salto ;
+
+            Vector3 movimientoFuerza = new Vector3(0f, salto, 0f);
+            rb.AddForce(movimientoFuerza, ForceMode.Impulse);
+        }
+
+
+        //if (Input.GetKeyDown(KeyCode.Space) && puedoSaltar)
+        //    {
+        //        Vector3 movimientoFuerza = Vector3.up * fuerzaSalto;
+        //        rb.AddForce(movimientoFuerza, ForceMode.Impulse);
+        //    }
+     //       puedoSaltar = Physics.Raycast(transform.position, Vector3.down, 1f, layerSuelo);
         
 
 
@@ -68,7 +79,7 @@ public class Movimiento : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        //Renderer rend = Jugador.GetComponent<Renderer>();
+        
         while (enter == false)
         {           
             if (collision.gameObject.CompareTag("salto"))

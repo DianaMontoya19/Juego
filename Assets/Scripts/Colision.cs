@@ -20,7 +20,7 @@ public class Colision : MonoBehaviour
     { 
        
         ListaCamaras[0].gameObject.SetActive(true);
-        ListaCamaras[2].gameObject.SetActive(true);
+    //    ListaCamaras[2].gameObject.SetActive(true);
         ListaCamaras[1].gameObject.SetActive(false);
         Jugador = Jugador.gameObject;
         desactivar();
@@ -32,7 +32,7 @@ public class Colision : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
 
-
+        
         if (collision.gameObject.CompareTag("Jugador"))
         {
 
