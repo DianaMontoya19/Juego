@@ -8,7 +8,6 @@ TagManager:
   - Muro
   - Caja
   - Caja2
-  - coin
   - plano
   - salto
   - salio
@@ -23,6 +22,10 @@ TagManager:
   - pendulo
   - Enemigo
   - Jugador2
+  - Wall
+  - Coin2
+  - Coin
+  - Gem
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,6 @@ public class Movimiento : MonoBehaviour
 
 
     public float velocidad;
-    public float fuerzaSalto = 5f;
     private Vector3 gravedad = new Vector3(0f, 9.8f, 0f);
     private Vector3 gravedad2 = new Vector3(0f, -9.8f, 0f);
     bool enter = false;
@@ -62,7 +61,7 @@ public class Movimiento : MonoBehaviour
  
         if (salto == 1 && puedoSaltar)
           {
-             Vector3 movimientoFuerza = Vector3.up * fuerzaSalto;
+            Vector3 movimientoFuerza = Vector3.up;
              rb.AddForce(movimientoFuerza, ForceMode.Impulse);
           }
 
