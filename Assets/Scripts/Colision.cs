@@ -34,7 +34,7 @@ public class Colision : MonoBehaviour
     {
 
         
-        if (collision.gameObject.CompareTag("Jugador"))
+        if (collision.gameObject.CompareTag("deteccion"))
         {
 
             myMeshRenderer.enabled = false;
@@ -44,7 +44,7 @@ public class Colision : MonoBehaviour
             myMeshRenderer.enabled = true;
 
 
-            ListaCamaras[1].gameObject.SetActive(true);
+            ListaCamaras[2].gameObject.SetActive(true);
             ListaCamaras[0].gameObject.SetActive(false);
 
             myMovimiento.enabled = false;
