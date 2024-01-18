@@ -7,8 +7,8 @@ public class Moneda : MonoBehaviour
     // public PhysicMaterial myMaterial;
     //public GameObject Jugador;
     public GameObject Coin;
-    public GameObject Coin2;
-    public GameObject gem;
+    //public GameObject Coin2;
+    //public GameObject gem;
     // public bool moneda=false;
     // public GameObject Jugador2;
     public Material material1;
@@ -26,8 +26,8 @@ public class Moneda : MonoBehaviour
                 case "Coin":
                     
                     Debug.Log("monedaRecogida");
-                   
-                    Destroy(Coin.gameObject);
+
+                    Desaparecer();
                     break;
 
 
@@ -35,7 +35,7 @@ public class Moneda : MonoBehaviour
                    
                     Debug.Log("monedaRecogida" );
 
-                    Destroy(gem.gameObject);
+                    Desaparecer();
                     break;
 
             }
@@ -47,8 +47,8 @@ public class Moneda : MonoBehaviour
                 case "Coin2":
                   
                     Debug.Log("monedaRecogida" );
+                    Desaparecer();
 
-                    Destroy(Coin2.gameObject);
                     player2 = true;
                     
                     break;
@@ -56,8 +56,8 @@ public class Moneda : MonoBehaviour
                 case "gem":
                    
                     Debug.Log("monedaRecogida" );
+                    Desaparecer();
 
-                    Destroy(gem.gameObject);
                     player21 = true;
                     
                     break;
@@ -79,6 +79,10 @@ public class Moneda : MonoBehaviour
         //}
 
 
+    }
+    void Desaparecer()
+    {
+        Destroy(Coin.gameObject);
     }
 
 

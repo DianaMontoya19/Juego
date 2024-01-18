@@ -20,8 +20,9 @@ public class Colision : MonoBehaviour
     { 
        
         ListaCamaras[0].gameObject.SetActive(true);
-    //    ListaCamaras[2].gameObject.SetActive(true);
-        ListaCamaras[1].gameObject.SetActive(false);
+        ListaCamaras[1].gameObject.SetActive(true);
+        ListaCamaras[2].gameObject.SetActive(false);
+        ListaCamaras[3].gameObject.SetActive(false);
         Jugador = Jugador.gameObject;
         desactivar();
 

@@ -10,6 +10,8 @@ public class Movimiento : MonoBehaviour
     //public string horizontalAxis;
     public string horizontalAxis;
     public string verticalAxis;
+    public string SaltoPlayer;
+
 
     public float velocidad;
     public float fuerzaSalto = 5f;
@@ -54,22 +56,17 @@ public class Movimiento : MonoBehaviour
 
     private void Update()
     {
-        if(puedoSaltar)
-        {
-            float salto = Input.GetAxisRaw("Jump");
-            //float speed = salto ;
+ 
+        float salto = Input.GetAxisRaw(SaltoPlayer);
+ 
+ 
+        if (salto == 1 && puedoSaltar)
+          {
+             Vector3 movimientoFuerza = Vector3.up * fuerzaSalto;
+             rb.AddForce(movimientoFuerza, ForceMode.Impulse);
+          }
 
-            Vector3 movimientoFuerza = new Vector3(0f, salto, 0f);
-            rb.AddForce(movimientoFuerza, ForceMode.Impulse);
-        }
-
-
-        //if (salto == 1 && puedoSaltar)
-        //    {
-        //        Vector3 movimientoFuerza = Vector3.up * fuerzaSalto;
-        //        rb.AddForce(movimientoFuerza, ForceMode.Impulse);
-        //    }
-     //       puedoSaltar = Physics.Raycast(transform.position, Vector3.down, 1f, layerSuelo);
+        puedoSaltar = Physics.Raycast(transform.position, Vector3.down, 1f, layerSuelo);
         
 
 
@@ -109,10 +106,7 @@ public class Movimiento : MonoBehaviour
             enter = false;
             }
 
-        //if (collision.gameObject.name == ("Coin") || collision.gameObject.name == ("gem"))
-        //{
-        //    rend.material = material1;
-        //}
+
 
 
 
