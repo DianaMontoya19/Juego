@@ -20,7 +20,7 @@ public class Moneda : MonoBehaviour
 
     private bool Player1 = false;
     private bool Player2 = false;
-    private bool GemActivate = false;
+    public bool GemActivate = false;
 
     public GameObject imagen;
     public TextMeshProUGUI[] dialogo;
@@ -28,7 +28,8 @@ public class Moneda : MonoBehaviour
 
     public MeshRenderer myMeshRenderer;
     public Movimiento myMovimiento;
-    public GameObject Jugador;
+    public GameObject Jugador1;
+    public GameObject Jugador2;
 
     private void Start()
     {
@@ -37,7 +38,10 @@ public class Moneda : MonoBehaviour
         ListaCamaras[1].gameObject.SetActive(true);//camaraplayer2
         ListaCamaras[2].gameObject.SetActive(false);//canonplayer1
         ListaCamaras[3].gameObject.SetActive(false);//canonplayer2
-        Jugador = Jugador.gameObject;
+        ListaCamaras[4].gameObject.SetActive(false);//power
+
+        Jugador1 = Jugador1.gameObject;
+        Jugador2 = Jugador2.gameObject;
         desactivar();
 
 
@@ -76,10 +80,12 @@ public class Moneda : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Gem"))
             {
+               
                 Destroy(Gem.gameObject);
                 BarraDeVida.fillAmount = 100 / VidaMaxima;
                 Star.fillAmount = 100 / VidaMaxima;
                 GemActivate = true;
+
             }
             if (GemActivate == true)
             {
@@ -88,27 +94,61 @@ public class Moneda : MonoBehaviour
 
                     myMeshRenderer.enabled = false;
 
-                    /*Jugador.transform.position = new Vector3(-10.0500002f, 3.03999996f, 11.3400002f)*/
-                    Jugador.transform.position = new Vector3(-9.76000023f, 3.0539999f, 8.14000034f);
+
+                    gameObject.transform.position = new Vector3(-9.76000023f, 3.0539999f, 8.14000034f);
 
                     myMeshRenderer.enabled = true;
 
 
-                    ListaCamaras[2].gameObject.SetActive(true);
+                    ListaCamaras[4].gameObject.SetActive(true);
                     ListaCamaras[0].gameObject.SetActive(false);
 
-                    myMovimiento.enabled = false;
+                    //  myMovimiento.enabled = false;
 
 
 
-                    activar();
+                    // activar();
 
                 }
-               // GemActivate = false;
+                //GemActivate = false;
             }
-            //Player1 = false;
-            //Player2 = false;
+
+
         }
+
+        if (GemActivate == false)
+        {
+            if (collision.gameObject.CompareTag("deteccion"))
+            {
+
+                myMeshRenderer.enabled = false;
+
+                Jugador1.transform.position = new Vector3(-10.0500002f, 3.03999996f, 11.3400002f);
+                Jugador2.transform.position = new Vector3(-9.68999958f, 3.0539999f, 5.03100014f);
+
+                myMeshRenderer.enabled = true;
+
+
+                ListaCamaras[2].gameObject.SetActive(true);
+                ListaCamaras[0].gameObject.SetActive(false);
+
+                myMovimiento.enabled = false;
+
+
+
+                activar();
+
+            }
+        }
+        if (collision.gameObject.CompareTag("pendulo"))
+        {
+            ListaCamaras[1].gameObject.SetActive(false);
+            ListaCamaras[0].gameObject.SetActive(true);
+
+            myMovimiento.enabled = true;
+            desactivar();
+        }
+
 
 
 
