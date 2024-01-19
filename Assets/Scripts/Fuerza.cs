@@ -16,7 +16,7 @@ public class Fuerza : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        while (rb.useGravity)
+       if (rb.useGravity)
         {
             if (collision.gameObject.CompareTag("Jugador"))
             {
@@ -30,7 +30,7 @@ public class Fuerza : MonoBehaviour
                 rb.AddForce(Vector3.forward * fuerza, ForceMode.Force);
 
             }
-            rb.useGravity = false;
+            //rb.useGravity = false;
         }
 
 

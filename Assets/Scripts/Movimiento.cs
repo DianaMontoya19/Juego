@@ -76,8 +76,8 @@ public class Movimiento : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         
-        while (enter == false)
-        {           
+        //while (enter == false)
+        //{           
             if (collision.gameObject.CompareTag("salto"))
             {
                 rb.useGravity = false;
@@ -87,12 +87,12 @@ public class Movimiento : MonoBehaviour
                              
             }
           
-            enter = true;
-            salir = true;
+        //    enter = true;
+        //    salir = true;
            
-        }
-        while (salir == true)
-            {
+        //}
+        //while (salir == true)
+        //    {
 
                 if (collision.gameObject.CompareTag("salio"))
                 {
@@ -101,9 +101,9 @@ public class Movimiento : MonoBehaviour
                 
             }
 
-            salir = false ;
-            enter = false;
-            }
+            //salir = false ;
+            //enter = false;
+            //}
 
 
 
