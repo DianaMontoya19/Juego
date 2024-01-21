@@ -11,6 +11,8 @@ public class Movimiento : MonoBehaviour
     public string horizontalAxis;
     public string verticalAxis;
     public string SaltoPlayer;
+    public GameObject Jugador1;
+    public GameObject Jugador2;
 
 
     public float velocidad;
@@ -31,7 +33,8 @@ public class Movimiento : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        
+        Jugador1 = Jugador1.gameObject;
+        Jugador2 = Jugador2.gameObject;
 
     }
 
@@ -66,25 +69,24 @@ public class Movimiento : MonoBehaviour
         //     rb.AddForce(movimientoFuerza, ForceMode.Impulse);
         //  }
 
-        float salto = Input.GetAxisRaw(SaltoPlayer);
-
-
-        if (salto == 1 && puedoSaltar)
-        {
-            rb.transform.position = new Vector3(0f, fuerzaSalto, 0f);
-            //Vector3 movimientoFuerza = Vector3.up * fuerzaSalto;
-            //rb.AddForce(movimientoFuerza, ForceMode.Impulse);
-        }
-
         //puedoSaltar = Physics.Raycast(transform.position, Vector3.down, 1f, layerSuelo);
+        bool space = Input.GetButtonDown(SaltoPlayer);
+   
+            if (space == true && puedoSaltar)
+            {
+                Vector3 movimientoFuerza = Vector3.up * fuerzaSalto;
+                rb.AddForce(movimientoFuerza, ForceMode.Impulse);
+            }
 
-
-        //if (Input.GetKeyDown(KeyCode.Space) && puedoSaltar)
+        
+        //if(Jugador2)
         //{
-        //    Vector3 movimientoFuerza = Vector3.up*fuerzaSalto;
-        //     rb.AddForce(movimientoFuerza, ForceMode.Impulse);
-        //  }
-
+        //    if (Input.GetKeyDown(KeyCode.Tab) && puedoSaltar)
+        //    {
+        //        Vector3 movimientoFuerza = Vector3.up * fuerzaSalto;
+        //        rb.AddForce(movimientoFuerza, ForceMode.Impulse);
+        //    }
+        //}
         //puedoSaltar = Physics.Raycast(transform.position, Vector3.down, 1f, layerSuelo);
 
 

@@ -3405,6 +3405,8 @@ MonoBehaviour:
   horizontalAxis: Horizontal
   verticalAxis: Vertical
   SaltoPlayer: Jump
+  Jugador1: {fileID: 438698452}
+  Jugador2: {fileID: 1313782875}
   velocidad: 3
   layerSuelo:
     serializedVersion: 2
@@ -7719,6 +7721,8 @@ MonoBehaviour:
   horizontalAxis: Horizontal1
   verticalAxis: Vertical1
   SaltoPlayer: Jump2
+  Jugador1: {fileID: 438698452}
+  Jugador2: {fileID: 1313782875}
   velocidad: 3
   layerSuelo:
     serializedVersion: 2
