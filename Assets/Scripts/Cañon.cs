@@ -6,15 +6,16 @@ public class Cañon : MonoBehaviour
 {
 
     public float grados = 0f;
-
- 
+    public string angulo;
+    public string anguloNeg;
 
     // Update is called once per frame
     void Update()
      {
+        float angle = Input.GetAxisRaw(angulo);
+        float angleNeg = Input.GetAxisRaw(anguloNeg);
 
-
-        if (Input.GetKeyDown(KeyCode.G))
+        if (angle==1 )
          {
             
                 float gradRad = grados  * Mathf.Deg2Rad;
@@ -31,7 +32,7 @@ public class Cañon : MonoBehaviour
 
 
             }
-        if (Input.GetKeyDown(KeyCode.F))
+        if (angleNeg == 1)
         {
 
             float gradRad = grados * Mathf.Deg2Rad;

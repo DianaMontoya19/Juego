@@ -8,6 +8,7 @@ public class Proyectiles : MonoBehaviour
    
     Cañon lanzamiento;
     public float initialSpeed = 5f;
+    public string disparo;
     private Rigidbody rb;
     void Start()
     {
@@ -20,7 +21,8 @@ public class Proyectiles : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.End))
+        float shoot = Input.GetAxisRaw(disparo);
+        if (shoot ==1)
        {
 
             launchProjectile();

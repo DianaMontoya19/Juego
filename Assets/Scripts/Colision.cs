@@ -8,17 +8,19 @@ public class Colision : MonoBehaviour
     public GameObject imagen;
     public TextMeshProUGUI[] dialogo;
     public GameObject[] ListaCamaras;
+    public Cañon cañon;
+    public Proyectiles proyectil;
 
     public MeshRenderer myMeshRenderer;
     public Movimiento myMovimiento;
-    public GameObject Jugador1;
-    public GameObject Jugador2;
+    //public GameObject Jugador1;
+    //public GameObject Jugador2;
+
+    bool poder = false;
 
 
 
-
-
-    private void Start()
+    private void Awake()
     {
 
 
@@ -28,8 +30,11 @@ public class Colision : MonoBehaviour
         ListaCamaras[3].gameObject.SetActive(false);//canonplayer2
         ListaCamaras[4].gameObject.SetActive(false);//power
 
-        Jugador1 = Jugador1.gameObject;
-        Jugador2 = Jugador2.gameObject;
+        proyectil.enabled = false;
+        cañon.enabled = false;
+
+        //Jugador1 = Jugador1.gameObject;
+        //Jugador2 = Jugador2.gameObject;
         desactivar();
 
 
@@ -39,28 +44,6 @@ public class Colision : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
 
-
-        if (collision.gameObject.CompareTag("deteccion"))
-        {
-
-            myMeshRenderer.enabled = false;
-
-
-            gameObject.transform.position = new Vector3(-9.76000023f, 3.0539999f, 8.14000034f);
-
-            myMeshRenderer.enabled = true;
-
-
-            ListaCamaras[4].gameObject.SetActive(true);
-            ListaCamaras[0].gameObject.SetActive(false);
-
-            //  myMovimiento.enabled = false;
-
-
-
-            // activar();
-
-        }
         if (collision.gameObject.CompareTag("Jugador"))
         {
 
@@ -72,13 +55,10 @@ public class Colision : MonoBehaviour
             myMeshRenderer.enabled = true;
 
 
-            ListaCamaras[2].gameObject.SetActive(true);
-            ListaCamaras[0].gameObject.SetActive(false);
+           // ListaCamaras[2].gameObject.SetActive(true);
+            //ListaCamaras[0].gameObject.SetActive(false);
 
             myMovimiento.enabled = false;
-
-
-
             activar();
 
         }
@@ -93,8 +73,8 @@ public class Colision : MonoBehaviour
             myMeshRenderer.enabled = true;
 
 
-            ListaCamaras[2].gameObject.SetActive(true);
-            ListaCamaras[0].gameObject.SetActive(false);
+            ListaCamaras[3].gameObject.SetActive(true);
+            ListaCamaras[1].gameObject.SetActive(false);
 
             myMovimiento.enabled = false;
 
@@ -106,7 +86,9 @@ public class Colision : MonoBehaviour
 
         if (collision.gameObject.CompareTag("pendulo"))
         {
-            ListaCamaras[1].gameObject.SetActive(false);
+            ListaCamaras[4].gameObject.SetActive(false);
+            
+
             ListaCamaras[0].gameObject.SetActive(true);
 
             myMovimiento.enabled = true;
@@ -128,4 +110,5 @@ public class Colision : MonoBehaviour
         dialogo[2].gameObject.SetActive(false);
         imagen.gameObject.SetActive(false);
     }
+
 }

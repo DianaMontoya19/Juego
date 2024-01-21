@@ -20,6 +20,7 @@ public class Movimiento : MonoBehaviour
     bool salir = false;
     private bool puedoSaltar;
     public LayerMask layerSuelo;
+    public float fuerzaSalto;
 
 
 
@@ -55,23 +56,42 @@ public class Movimiento : MonoBehaviour
 
     private void Update()
     {
- 
-        float salto = Input.GetAxisRaw(SaltoPlayer);
- 
- 
-        if (salto == 1 && puedoSaltar)
-          {
-            Vector3 movimientoFuerza = Vector3.up;
-             rb.AddForce(movimientoFuerza, ForceMode.Impulse);
-          }
 
-        puedoSaltar = Physics.Raycast(transform.position, Vector3.down, 1f, layerSuelo);
-        
+        //float salto = Input.GetAxisRaw(SaltoPlayer);
+
+
+        //if (salto == 1 && puedoSaltar)
+        //  {
+        //    Vector3 movimientoFuerza = Vector3.up*fuerzaSalto;
+        //     rb.AddForce(movimientoFuerza, ForceMode.Impulse);
+        //  }
+
+        float salto = Input.GetAxisRaw(SaltoPlayer);
+
+
+        if (salto == 1 && puedoSaltar)
+        {
+            rb.transform.position = new Vector3(0f, fuerzaSalto, 0f);
+            //Vector3 movimientoFuerza = Vector3.up * fuerzaSalto;
+            //rb.AddForce(movimientoFuerza, ForceMode.Impulse);
+        }
+
+        //puedoSaltar = Physics.Raycast(transform.position, Vector3.down, 1f, layerSuelo);
+
+
+        //if (Input.GetKeyDown(KeyCode.Space) && puedoSaltar)
+        //{
+        //    Vector3 movimientoFuerza = Vector3.up*fuerzaSalto;
+        //     rb.AddForce(movimientoFuerza, ForceMode.Impulse);
+        //  }
+
+        //puedoSaltar = Physics.Raycast(transform.position, Vector3.down, 1f, layerSuelo);
+
 
 
 
     }
-  
+
 
     void OnCollisionEnter(Collision collision)
     {
