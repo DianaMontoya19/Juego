@@ -16,16 +16,16 @@ public class Moneda : MonoBehaviour
     public Image Star;
  
     private float VidaMaxima = 100;
-    public bool Player1 = false;
-    public bool Player2 = false;
-    public bool GemActivate = false;
-    public GameObject imagen;
-    public TextMeshProUGUI[] dialogo;
+    private bool Player1 = false;
+    private bool Player2 = false;
+    private bool GemActivate = false;
+    //public GameObject imagen;
+    //public TextMeshProUGUI[] dialogo;
     public GameObject[] ListaCamaras;
-    public Cañon cañon;
-    public Proyectiles proyectil;
+    //public Cañon cañon;
+    //public Proyectiles proyectil;
     public MeshRenderer myMeshRenderer;
-    public Movimiento myMovimiento;
+    //public Movimiento myMovimiento;
     public GameObject Jugador1;
     public GameObject Jugador2;
 
@@ -41,13 +41,11 @@ public class Moneda : MonoBehaviour
         ListaCamaras[4].gameObject.SetActive(false);//power
         ListaCamaras[5].gameObject.SetActive(false);//powerPl2
 
-        proyectil.enabled = false;
-        cañon.enabled = false;
         poder.enabled = false;
 
         Jugador1 = Jugador1.gameObject;
         Jugador2 = Jugador2.gameObject;
-        desactivar();
+ 
 
 
     }
@@ -92,8 +90,7 @@ public class Moneda : MonoBehaviour
                 if (collision.gameObject.CompareTag("deteccion"))
                 {
                     poder.enabled = true;
-                    proyectil.enabled = true;
-                    cañon.enabled = true;
+
                     myMeshRenderer.enabled = false;
 
 
@@ -114,8 +111,7 @@ public class Moneda : MonoBehaviour
                     ListaCamaras[0].gameObject.SetActive(true);
                     ListaCamaras[2].gameObject.SetActive(false);
 
-                    myMovimiento.enabled = true;
-                    desactivar();
+      
                 }
             }
             if (Player2 == true)
@@ -123,8 +119,7 @@ public class Moneda : MonoBehaviour
                 if (collision.gameObject.CompareTag("deteccion"))
                 {
                     poder.enabled = true;
-                    proyectil.enabled = true;
-                    cañon.enabled = true;
+;
                     myMeshRenderer.enabled = false;
 
 
@@ -148,8 +143,8 @@ public class Moneda : MonoBehaviour
                 {
                     ListaCamaras[1].gameObject.SetActive(true);
                     ListaCamaras[3].gameObject.SetActive(false);
-                    myMovimiento.enabled = true;
-                    desactivar();
+                    
+                    
                 }
             }
         }
@@ -163,8 +158,7 @@ public class Moneda : MonoBehaviour
                 {
                     if (collision.gameObject.CompareTag("deteccion") || collision.gameObject.CompareTag("Cañon"))
                     {
-                        proyectil.enabled = true;
-                        cañon.enabled = true;
+                        
                         myMeshRenderer.enabled = false;
 
 
@@ -176,15 +170,14 @@ public class Moneda : MonoBehaviour
                         ListaCamaras[3].gameObject.SetActive(true);
                         ListaCamaras[1].gameObject.SetActive(false);
 
-                        myMovimiento.enabled = false;
-                        activar();
+                        
+                        
                     }
                     if (collision.gameObject.CompareTag("Floor3"))
                     {
                         ListaCamaras[1].gameObject.SetActive(true);
                         ListaCamaras[3].gameObject.SetActive(false);
-                        myMovimiento.enabled = true;
-                        desactivar();
+                       
                     }
                 }
             }
@@ -195,8 +188,7 @@ public class Moneda : MonoBehaviour
                 {
                     if (collision.gameObject.CompareTag("deteccion") || collision.gameObject.CompareTag("Cañon"))
                     {
-                       proyectil.enabled = true;
-                        cañon.enabled = true;
+
                         myMeshRenderer.enabled = false;
 
                         Jugador1.transform.position = new Vector3(-10.0500002f, 3.03999996f, 11.3400002f);
@@ -208,8 +200,8 @@ public class Moneda : MonoBehaviour
                         ListaCamaras[2].gameObject.SetActive(true);
                         ListaCamaras[0].gameObject.SetActive(false);
 
-                        myMovimiento.enabled = false;
-                        activar();
+                        
+                        //activar();
                     }
 
                     if (collision.gameObject.CompareTag("Floor3"))
@@ -217,8 +209,8 @@ public class Moneda : MonoBehaviour
                         ListaCamaras[0].gameObject.SetActive(true);
                         ListaCamaras[2].gameObject.SetActive(false);
 
-                        myMovimiento.enabled = true;
-                        desactivar();
+                        
+                        
                     }
                 }
             }
@@ -228,20 +220,20 @@ public class Moneda : MonoBehaviour
 
  
     }
-    void activar()
-    {
-        dialogo[0].gameObject.SetActive(true);
-        dialogo[1].gameObject.SetActive(true);
-        dialogo[2].gameObject.SetActive(true);
-        imagen.gameObject.SetActive(true);
-    }
-    void desactivar()
-    {
+    //void activar()
+    //{
+    //    dialogo[0].gameObject.SetActive(true);
+    //    dialogo[1].gameObject.SetActive(true);
+    //    dialogo[2].gameObject.SetActive(true);
+    //    imagen.gameObject.SetActive(true);
+    //}
+    //void desactivar()
+    //{
 
-        dialogo[0].gameObject.SetActive(false);
-        dialogo[1].gameObject.SetActive(false);
-        dialogo[2].gameObject.SetActive(false);
-        imagen.gameObject.SetActive(false);
-    }
+    //    dialogo[0].gameObject.SetActive(false);
+    //    dialogo[1].gameObject.SetActive(false);
+    //    dialogo[2].gameObject.SetActive(false);
+    //    imagen.gameObject.SetActive(false);
+    //}
 
 }
