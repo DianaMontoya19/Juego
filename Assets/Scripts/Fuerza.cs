@@ -18,19 +18,13 @@ public class Fuerza : MonoBehaviour
     {
        if (rb.useGravity)
         {
-            if (collision.gameObject.CompareTag("Jugador"))
+            if (collision.gameObject.CompareTag("Jugador") || collision.gameObject.CompareTag("Jugador2"))
             {
                
                 rb.AddForce(Vector3.forward * fuerza, ForceMode.Force);
 
             }
-            if( collision.gameObject.CompareTag("Jugador2"))
-            {
 
-                rb.AddForce(Vector3.forward * fuerza, ForceMode.Force);
-
-            }
-            //rb.useGravity = false;
         }
 
 

@@ -62,24 +62,14 @@ public class Movimiento : MonoBehaviour
 
         if (salto == 1 && puedoSaltar )
         {
-            saltar();
+            Vector3 movimientoFuerza = new Vector3(0f, altura(), 0f);
+            rb.AddForce(movimientoFuerza, ForceMode.Impulse);
         }
 
         puedoSaltar = Physics.Raycast(transform.position, Vector3.down, 0.3f, layerSuelo);
     }
-    void saltar()
-    {
-        Vector3 movimientoFuerza = new Vector3(0f, altura(), 0f);
-        rb.AddForce(movimientoFuerza, ForceMode.Impulse);
+ 
 
-        
-
-    }
-
-
-
-
-    //}
     float altura()
     {
         return Mathf.Min(fuerzaSalto, MaxAltura);
@@ -90,9 +80,8 @@ public class Movimiento : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         
-        //while (enter == false)
-        //{           
-            if (collision.gameObject.CompareTag("salto"))
+          
+            if (collision.gameObject.CompareTag("Fly"))
             {
                 rb.useGravity = false;
                 rb.AddForce(gravedad, ForceMode.Acceleration);
@@ -100,30 +89,13 @@ public class Movimiento : MonoBehaviour
 
                              
             }
-          
-        //    enter = true;
-        //    salir = true;
-           
-        //}
-        //while (salir == true)
-        //    {
 
-                if (collision.gameObject.CompareTag("salio"))
-                {
+            if (collision.gameObject.CompareTag("Out"))
+            {
                     rb.useGravity = true;
-                // rb.AddForce(gravedad2, ForceMode.Acceleration);
+              
                 
-            }
-
-            //salir = false ;
-            //enter = false;
-            //}
-
-
-
-
-
-
+             }
 
 
 

@@ -5,29 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Jugador
-  - Muro
-  - Caja
-  - Caja2
-  - plano
-  - salto
-  - salio
-  - Enemigo2
-  - Deteccion1
-  - Deteccion2
-  - Deteccion3
-  - Deteccion4
   - colision
   - deteccion
-  - jugador2
-  - pendulo
-  - Enemigo
   - Jugador2
-  - Wall
   - Coin2
   - Coin
   - Gem
   - "Ca\xF1on"
   - Plataforma
+  - Fly
+  - Out
+  - Floor3
   layers:
   - Default
   - TransparentFX
