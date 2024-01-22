@@ -19,8 +19,8 @@ public class Moneda : MonoBehaviour
     private bool Player1 = false;
     private bool Player2 = false;
     private bool GemActivate = false;
-    //public GameObject imagen;
-    //public TextMeshProUGUI[] dialogo;
+    public GameObject imagen;
+    public TextMeshProUGUI dialogo;
     public GameObject[] ListaCamaras;
     //public Cañon cañon;
     //public Proyectiles proyectil;
@@ -28,6 +28,7 @@ public class Moneda : MonoBehaviour
     //public Movimiento myMovimiento;
     public GameObject Jugador1;
     public GameObject Jugador2;
+    private float timeText = 5f;
 
     public Power poder;
 
@@ -45,6 +46,7 @@ public class Moneda : MonoBehaviour
 
         Jugador1 = Jugador1.gameObject;
         Jugador2 = Jugador2.gameObject;
+        desactivar();
  
 
 
@@ -89,6 +91,7 @@ public class Moneda : MonoBehaviour
             {
                 if (collision.gameObject.CompareTag("deteccion"))
                 {
+                    
                     poder.enabled = true;
 
                     myMeshRenderer.enabled = false;
@@ -101,6 +104,10 @@ public class Moneda : MonoBehaviour
 
                     ListaCamaras[4].gameObject.SetActive(true);
                     ListaCamaras[0].gameObject.SetActive(false);
+                    activar();
+
+
+                    Invoke("desactivar", timeText);
 
 
 
@@ -110,7 +117,7 @@ public class Moneda : MonoBehaviour
                 {
                     ListaCamaras[0].gameObject.SetActive(true);
                     ListaCamaras[2].gameObject.SetActive(false);
-
+                    desactivar();
       
                 }
             }
@@ -131,9 +138,9 @@ public class Moneda : MonoBehaviour
                     ListaCamaras[5].gameObject.SetActive(true);
                     ListaCamaras[1].gameObject.SetActive(false);
 
+                    activar();
 
-
-
+                    Invoke("desactivar",timeText);
 
 
                     
@@ -144,7 +151,7 @@ public class Moneda : MonoBehaviour
                     ListaCamaras[1].gameObject.SetActive(true);
                     ListaCamaras[3].gameObject.SetActive(false);
                     
-                    
+                    desactivar() ;
                 }
             }
         }
@@ -220,20 +227,16 @@ public class Moneda : MonoBehaviour
 
  
     }
-    //void activar()
-    //{
-    //    dialogo[0].gameObject.SetActive(true);
-    //    dialogo[1].gameObject.SetActive(true);
-    //    dialogo[2].gameObject.SetActive(true);
-    //    imagen.gameObject.SetActive(true);
-    //}
-    //void desactivar()
-    //{
+    public void activar()
+    {
+        dialogo.gameObject.SetActive(true);
+        imagen.gameObject.SetActive(true);
+    }
+    public void desactivar()
+    {
+          dialogo.gameObject.SetActive(false);
 
-    //    dialogo[0].gameObject.SetActive(false);
-    //    dialogo[1].gameObject.SetActive(false);
-    //    dialogo[2].gameObject.SetActive(false);
-    //    imagen.gameObject.SetActive(false);
-    //}
+          imagen.gameObject.SetActive(false);
+    }
 
 }

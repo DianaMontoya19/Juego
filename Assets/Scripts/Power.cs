@@ -6,14 +6,20 @@ public class Power : MonoBehaviour
 {
     public GameObject power;
     public Transform posicion;
-
+   
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        presionar();
+    }
+    public void presionar()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
         {
+
             Instantiate(power, posicion);
+
         }
     }
 }
