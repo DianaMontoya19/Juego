@@ -26,6 +26,8 @@ TagManager:
   - Coin2
   - Coin
   - Gem
+  - "Ca\xF1on"
+  - Plataforma
   layers:
   - Default
   - TransparentFX

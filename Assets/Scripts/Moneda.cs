@@ -36,8 +36,7 @@ public class Moneda : MonoBehaviour
 
     private void Start()
     {
-        // coli = GetComponent<Colision>();
-        //coli = FindObjectOfType<Colision>();
+
         ListaCamaras[0].gameObject.SetActive(true);// camaraplayer1
         ListaCamaras[1].gameObject.SetActive(true);//camaraplayer2
         ListaCamaras[2].gameObject.SetActive(false);//canonplayer1
@@ -147,12 +146,43 @@ public class Moneda : MonoBehaviour
 
         if(GemActivate == false)
         {
+            if (Player2 == true)
+            {
+                if (Jugador2)
+                {
+                    if (collision.gameObject.CompareTag("deteccion") || collision.gameObject.CompareTag("Cañon"))
+                    {
+                        proyectil.enabled = true;
+                        cañon.enabled = true;
+                        myMeshRenderer.enabled = false;
+
+
+                        Jugador2.transform.position = new Vector3(-9.68999958f, 3.0539999f, 5.03100014f);
+
+                        myMeshRenderer.enabled = true;
+
+
+                        ListaCamaras[3].gameObject.SetActive(true);
+                        ListaCamaras[1].gameObject.SetActive(false);
+
+                        myMovimiento.enabled = false;
+                        activar();
+                    }
+                    if (collision.gameObject.CompareTag("pendulo"))
+                    {
+                        ListaCamaras[1].gameObject.SetActive(true);
+                        ListaCamaras[3].gameObject.SetActive(false);
+                        myMovimiento.enabled = true;
+                        desactivar();
+                    }
+                }
+            }
             if (Player1 == true )
             {
  
                 if (Jugador1)
                 {
-                    if (collision.gameObject.CompareTag("deteccion"))
+                    if (collision.gameObject.CompareTag("deteccion") || collision.gameObject.CompareTag("Cañon"))
                     {
                        proyectil.enabled = true;
                         cañon.enabled = true;
@@ -182,37 +212,7 @@ public class Moneda : MonoBehaviour
                 }
             }
 
-            if(Player2 == true)
-            { 
-                if (Jugador2)
-                {
-                    if (collision.gameObject.CompareTag("deteccion"))
-                    {
-                       proyectil.enabled = true;
-                        cañon.enabled = true;
-                        myMeshRenderer.enabled = false;
 
-                        
-                        Jugador2.transform.position = new Vector3(-9.68999958f, 3.0539999f, 5.03100014f);
-
-                        myMeshRenderer.enabled = true;
-
-
-                        ListaCamaras[3].gameObject.SetActive(true);
-                        ListaCamaras[1].gameObject.SetActive(false);
-
-                        myMovimiento.enabled = false;
-                        activar();
-                    }
-                    if (collision.gameObject.CompareTag("pendulo"))
-                    {
-                        ListaCamaras[1].gameObject.SetActive(true);
-                        ListaCamaras[3].gameObject.SetActive(false);
-                        myMovimiento.enabled = true;
-                        desactivar();
-                    }
-                }
-            }
         }
 
  

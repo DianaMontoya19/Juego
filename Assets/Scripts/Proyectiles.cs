@@ -10,7 +10,8 @@ public class Proyectiles : MonoBehaviour
     public float initialSpeed = 5f;
     public string disparo;
     Rigidbody rb;
-    bool yaDisparo = false;
+   
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -23,7 +24,8 @@ public class Proyectiles : MonoBehaviour
     private void Update()
     {
         float shoot = Input.GetAxisRaw(disparo);
-        if (shoot ==1 && !yaDisparo)
+
+        if (shoot ==1)
        {
 
             launchProjectile();
@@ -44,7 +46,7 @@ public class Proyectiles : MonoBehaviour
 
         rb.velocity = initialVelocity;
 
-        yaDisparo = true;
+        
 
     }
 }
