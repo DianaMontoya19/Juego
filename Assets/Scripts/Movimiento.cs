@@ -11,8 +11,7 @@ public class Movimiento : MonoBehaviour
     public string horizontalAxis;
     public string verticalAxis;
     public string SaltoPlayer;
-    public GameObject Jugador1;
-    public GameObject Jugador2;
+
 
 
     public float velocidad;
@@ -23,7 +22,8 @@ public class Movimiento : MonoBehaviour
     private bool puedoSaltar;
     public LayerMask layerSuelo;
     public float fuerzaSalto;
-
+    public float MaxAltura=3f;
+   
 
 
 
@@ -32,9 +32,6 @@ public class Movimiento : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-
-        Jugador1 = Jugador1.gameObject;
-        Jugador2 = Jugador2.gameObject;
 
     }
 
@@ -55,43 +52,38 @@ public class Movimiento : MonoBehaviour
 
         
     }
- 
+
 
     private void Update()
     {
 
-        //float salto = Input.GetAxisRaw(SaltoPlayer);
+        float salto = Input.GetAxisRaw(SaltoPlayer);
 
 
-        //if (salto == 1 && puedoSaltar)
-        //  {
-        //    Vector3 movimientoFuerza = Vector3.up*fuerzaSalto;
-        //     rb.AddForce(movimientoFuerza, ForceMode.Impulse);
-        //  }
+        if (salto == 1 && puedoSaltar )
+        {
+            saltar();
+        }
 
-        //puedoSaltar = Physics.Raycast(transform.position, Vector3.down, 1f, layerSuelo);
-        bool space = Input.GetButtonDown(SaltoPlayer);
-   
-            if (space == true && puedoSaltar)
-            {
-                Vector3 movimientoFuerza = Vector3.up * fuerzaSalto;
-                rb.AddForce(movimientoFuerza, ForceMode.Impulse);
-            }
+        puedoSaltar = Physics.Raycast(transform.position, Vector3.down, 0.3f, layerSuelo);
+    }
+    void saltar()
+    {
+        Vector3 movimientoFuerza = new Vector3(0f, altura(), 0f);
+        rb.AddForce(movimientoFuerza, ForceMode.Impulse);
 
         
-        //if(Jugador2)
-        //{
-        //    if (Input.GetKeyDown(KeyCode.Tab) && puedoSaltar)
-        //    {
-        //        Vector3 movimientoFuerza = Vector3.up * fuerzaSalto;
-        //        rb.AddForce(movimientoFuerza, ForceMode.Impulse);
-        //    }
-        //}
-        //puedoSaltar = Physics.Raycast(transform.position, Vector3.down, 1f, layerSuelo);
+
+    }
 
 
 
 
+    //}
+    float altura()
+    {
+        return Mathf.Min(fuerzaSalto, MaxAltura);
+        
     }
 
 

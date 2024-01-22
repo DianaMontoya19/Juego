@@ -154,7 +154,7 @@ public class Moneda : MonoBehaviour
                 {
                     if (collision.gameObject.CompareTag("deteccion"))
                     {
-                        proyectil.enabled = true;
+                       proyectil.enabled = true;
                         cañon.enabled = true;
                         myMeshRenderer.enabled = false;
 
@@ -188,7 +188,7 @@ public class Moneda : MonoBehaviour
                 {
                     if (collision.gameObject.CompareTag("deteccion"))
                     {
-                        proyectil.enabled = true;
+                       proyectil.enabled = true;
                         cañon.enabled = true;
                         myMeshRenderer.enabled = false;
 

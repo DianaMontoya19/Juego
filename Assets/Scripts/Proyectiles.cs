@@ -9,7 +9,8 @@ public class Proyectiles : MonoBehaviour
     Cañon lanzamiento;
     public float initialSpeed = 5f;
     public string disparo;
-    private Rigidbody rb;
+    Rigidbody rb;
+    bool yaDisparo = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -22,7 +23,7 @@ public class Proyectiles : MonoBehaviour
     private void Update()
     {
         float shoot = Input.GetAxisRaw(disparo);
-        if (shoot ==1)
+        if (shoot ==1 && !yaDisparo)
        {
 
             launchProjectile();
@@ -42,6 +43,8 @@ public class Proyectiles : MonoBehaviour
 
 
         rb.velocity = initialVelocity;
+
+        yaDisparo = true;
 
     }
 }

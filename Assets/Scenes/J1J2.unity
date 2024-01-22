@@ -521,7 +521,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61782539}
-  m_Material: {fileID: 13400000, guid: bcf2c52c6be45ae43a3b763ac385f7fe, type: 2}
+  m_Material: {fileID: 13400000, guid: 31cdcd491b537d6488c56f5f0131790c, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2562,7 +2562,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &330585545
 Camera:
   m_ObjectHideFlags: 0
@@ -2973,7 +2973,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397400240}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &397400243
 Camera:
   m_ObjectHideFlags: 0
@@ -3405,13 +3405,12 @@ MonoBehaviour:
   horizontalAxis: Horizontal
   verticalAxis: Vertical
   SaltoPlayer: Jump
-  Jugador1: {fileID: 438698452}
-  Jugador2: {fileID: 1313782875}
   velocidad: 3
   layerSuelo:
     serializedVersion: 2
     m_Bits: 64
-  fuerzaSalto: 5
+  fuerzaSalto: 3
+  MaxAltura: 2
 --- !u!114 &438698460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3593,7 +3592,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528013283}
-  m_Material: {fileID: 13400000, guid: bcf2c52c6be45ae43a3b763ac385f7fe, type: 2}
+  m_Material: {fileID: 13400000, guid: 31cdcd491b537d6488c56f5f0131790c, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4208,7 +4207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 716857251}
   - component: {fileID: 716857252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TerrainGroup_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4646,7 +4645,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847640287}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &847640291
 Camera:
   m_ObjectHideFlags: 0
@@ -6090,7 +6089,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5074522622988141685, guid: 7c4b429cfc1a1964b94ce195883bd763,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1436245469}
   m_SourcePrefab: {fileID: 100100000, guid: 7c4b429cfc1a1964b94ce195883bd763, type: 3}
 --- !u!1 &1037925706
 GameObject:
@@ -6132,7 +6135,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037925706}
-  m_Material: {fileID: 13400000, guid: bcf2c52c6be45ae43a3b763ac385f7fe, type: 2}
+  m_Material: {fileID: 13400000, guid: 4f9b3b62200b5134bb2c30750747a446, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -6824,7 +6827,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1806908815}
     m_Modifications:
     - target: {fileID: 1638347602806178, guid: 68a39471bcf807f45aace3b120f318f0, type: 3}
       propertyPath: m_Name
@@ -6872,7 +6875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4501404751446666, guid: 68a39471bcf807f45aace3b120f318f0, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.7
+      value: 0.6999999
       objectReference: {fileID: 0}
     - target: {fileID: 4501404751446666, guid: 68a39471bcf807f45aace3b120f318f0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6884,7 +6887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4501404751446666, guid: 68a39471bcf807f45aace3b120f318f0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.05
+      value: 4.9500003
       objectReference: {fileID: 0}
     - target: {fileID: 4501404751446666, guid: 68a39471bcf807f45aace3b120f318f0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6892,7 +6895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4501404751446666, guid: 68a39471bcf807f45aace3b120f318f0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4501404751446666, guid: 68a39471bcf807f45aace3b120f318f0, type: 3}
       propertyPath: m_LocalRotation.y
@@ -6900,7 +6903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4501404751446666, guid: 68a39471bcf807f45aace3b120f318f0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4501404751446666, guid: 68a39471bcf807f45aace3b120f318f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7417,7 +7420,7 @@ Transform:
   m_GameObject: {fileID: 1256529079}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.72200024, y: -0.93100035, z: 0.7142856}
+  m_LocalPosition: {x: -0.72200024, y: -1, z: 0.7142856}
   m_LocalScale: {x: 1.4285711, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7721,13 +7724,12 @@ MonoBehaviour:
   horizontalAxis: Horizontal1
   verticalAxis: Vertical1
   SaltoPlayer: Jump2
-  Jugador1: {fileID: 438698452}
-  Jugador2: {fileID: 1313782875}
   velocidad: 3
   layerSuelo:
     serializedVersion: 2
     m_Bits: 64
-  fuerzaSalto: 0
+  fuerzaSalto: 5
+  MaxAltura: 2
 --- !u!114 &1313782885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8555,6 +8557,14 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1012918579}
   m_PrefabAsset: {fileID: 0}
+--- !u!81 &1436245469
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436245463}
+  m_Enabled: 1
 --- !u!1 &1459959461
 GameObject:
   m_ObjectHideFlags: 0
@@ -9092,7 +9102,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572763537}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1572763540
 Camera:
   m_ObjectHideFlags: 0
@@ -10056,6 +10066,7 @@ Transform:
   - {fileID: 1717773271}
   - {fileID: 1060721243}
   - {fileID: 85596097}
+  - {fileID: 1924240043}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1815981070
@@ -11763,7 +11774,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059263427}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2059263431
 Camera:
   m_ObjectHideFlags: 0
@@ -11928,7 +11939,6 @@ SceneRoots:
   - {fileID: 2018122596}
   - {fileID: 84210294}
   - {fileID: 1012918579}
-  - {fileID: 1161984975}
   - {fileID: 1806908815}
   - {fileID: 1336701267}
   - {fileID: 1194745815}
