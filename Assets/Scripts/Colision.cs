@@ -10,10 +10,11 @@ public class Colision : MonoBehaviour
     //public GameObject[] ListaCamaras;
 
 
-    public MeshRenderer myMeshRenderer;
+    public MeshRenderer[] myMeshRenderer;
    
     public GameObject Jugador1;
     public GameObject Jugador2;
+    Moneda vida;
 
 
 
@@ -22,13 +23,14 @@ public class Colision : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Jugador"))
         {
+           // vida.BarraDeVida.fillAmount =  vida.VidaMaxima/25;
 
-            myMeshRenderer.enabled = false;
+            myMeshRenderer[0].enabled = false;
 
             Jugador1.transform.position = new Vector3(5.42999983f, 3.23000002f, 10.6599998f);
 
 
-            myMeshRenderer.enabled = true;
+            myMeshRenderer[0].enabled = true;
 
 
 
@@ -36,12 +38,12 @@ public class Colision : MonoBehaviour
         if (collision.gameObject.CompareTag("Jugador2"))
         {
 
-            myMeshRenderer.enabled = false;
+            myMeshRenderer[1].enabled = false;
 
 
             Jugador2.transform.position = new Vector3(5.42999983f, 3.23000002f, 6.1500001f);
 
-            myMeshRenderer.enabled = true;
+            myMeshRenderer[1].enabled = true;
 
 
 

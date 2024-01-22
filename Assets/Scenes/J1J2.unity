@@ -3094,6 +3094,7 @@ MonoBehaviour:
   Gem: {fileID: 1974205183}
   BarraDeVida: {fileID: 1683659985}
   Star: {fileID: 273284837}
+  VidaMaxima: 100
   imagen: {fileID: 1527464541}
   dialogo: {fileID: 1385554067}
   ListaCamaras:
@@ -6526,7 +6527,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72df5432662a00a449eee0f0a4538323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myMeshRenderer: {fileID: 438698455}
+  myMeshRenderer:
+  - {fileID: 438698455}
+  - {fileID: 1313782877}
   Jugador1: {fileID: 438698452}
   Jugador2: {fileID: 1313782875}
 --- !u!65 &1222271154
@@ -6875,6 +6878,7 @@ MonoBehaviour:
   Gem: {fileID: 1974205183}
   BarraDeVida: {fileID: 1716872808}
   Star: {fileID: 1126224948}
+  VidaMaxima: 100
   imagen: {fileID: 1670014857}
   dialogo: {fileID: 1964685715}
   ListaCamaras:

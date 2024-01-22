@@ -15,7 +15,7 @@ public class Moneda : MonoBehaviour
     public Image BarraDeVida;
     public Image Star;
  
-    private float VidaMaxima = 100;
+    public float VidaMaxima = 100;
     private bool Player1 = false;
     private bool Player2 = false;
     private bool GemActivate = false;
@@ -28,7 +28,7 @@ public class Moneda : MonoBehaviour
     //public Movimiento myMovimiento;
     public GameObject Jugador1;
     public GameObject Jugador2;
-    private float timeText = 5f;
+    private float timeText = 3f;
 
     public Power poder;
 
