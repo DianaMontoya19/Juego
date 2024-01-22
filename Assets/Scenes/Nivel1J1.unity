@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.35424328, g: 0.72345483, b: 0.9621214, a: 1}
+  m_IndirectSpecularColor: {r: 0.35398352, g: 0.7229164, b: 0.9622154, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2083,7 +2083,6 @@ GameObject:
   - component: {fileID: 438698453}
   - component: {fileID: 438698460}
   - component: {fileID: 438698462}
-  - component: {fileID: 438698464}
   - component: {fileID: 438698463}
   m_Layer: 0
   m_Name: Jugador
@@ -2254,33 +2253,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   power: {fileID: 438698452}
   posicion: {fileID: 0}
---- !u!114 &438698464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 438698452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 865dfe5c34a8e844e999234cb52c1b32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Coin: {fileID: 1574633884}
-  Coin2: {fileID: 1574633884}
-  Gem: {fileID: 1974205183}
-  BarraDeVida: {fileID: 0}
-  Star: {fileID: 0}
-  VidaMaxima: 100
-  imagen: {fileID: 1527464541}
-  dialogo: {fileID: 1385554067}
-  ListaCamaras:
-  - {fileID: 330585543}
-  - {fileID: 847640287}
-  myMeshRenderer: {fileID: 438698455}
-  Jugador1: {fileID: 438698452}
-  Jugador2: {fileID: 0}
-  poder: {fileID: 0}
 --- !u!1 &528013283 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1464484887366625871, guid: 973e30aed52df874a8a9b583c4cf06d6,
