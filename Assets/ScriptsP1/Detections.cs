@@ -28,13 +28,13 @@ public class Detections : MonoBehaviour
 
     private float timeText = 3f;
 
-    public Power poder;
+    //public Power poder;
 
     private void Start()
     {
 
         ListaCamaras[0].gameObject.SetActive(true);// camaraplayer1
-        ListaCamaras[1].gameObject.SetActive(true);//camaraplayer2
+        ListaCamaras[1].gameObject.SetActive(false);// Jumpplayer1
 
 
         //poder.enabled = false;

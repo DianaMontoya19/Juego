@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fuerza : MonoBehaviour
+public class ForcePl1 : MonoBehaviour
 {
     public float fuerza = 5f;
     private Rigidbody rb;
@@ -18,7 +18,7 @@ public class Fuerza : MonoBehaviour
     {
        if (rb.useGravity)
         {
-            if (collision.gameObject.CompareTag("Jugador") || collision.gameObject.CompareTag("Jugador2"))
+            if (collision.gameObject.CompareTag("Jugador"))
             {
                
                 rb.AddForce(Vector3.forward * fuerza, ForceMode.Force);

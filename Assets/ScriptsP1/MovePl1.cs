@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movimiento : MonoBehaviour
+public class MovePl1 : MonoBehaviour
 {
 
     // Start is called before the first frame update
@@ -11,8 +11,6 @@ public class Movimiento : MonoBehaviour
     public string horizontalAxis;
     public string verticalAxis;
     public string SaltoPlayer;
-
-
 
     public float velocidad;
     private Vector3 gravedad = new Vector3(0f, 9.8f, 0f);

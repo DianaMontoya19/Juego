@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Proyectiles : MonoBehaviour
-     
+public class Rebound : MonoBehaviour
+    
 {
 
     public float constanteElastica = 100f;
@@ -13,7 +13,7 @@ public class Proyectiles : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Jugador") || collision.gameObject.CompareTag("Jugador2"))
+        if (collision.gameObject.CompareTag("Jugador"))
         {
             AplicarFuerzaRestauradora(collision.gameObject);
         }

@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawn : MonoBehaviour
+public class SpawnEnemy: MonoBehaviour
 {
-    public GameObject moneda;
-    public Transform[] posicion;
+    public GameObject Enemy;
+    public Transform[] position;
     public bool seleccion;
  
     void Start()
     {
-        foreach (Transform posi in posicion)
+        foreach (Transform posi in position)
         {
-         Instantiate(moneda, posi);
+         Instantiate(Enemy, posi);
         }
     }
 
