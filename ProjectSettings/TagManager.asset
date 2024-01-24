@@ -16,6 +16,10 @@ TagManager:
   - Fly
   - Out
   - Floor3
+  - Muro
+  - Caja2
+  - pendulo
+  - JumpingRea
   layers:
   - Default
   - TransparentFX

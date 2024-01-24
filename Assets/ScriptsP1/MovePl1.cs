@@ -15,8 +15,6 @@ public class MovePl1 : MonoBehaviour
     public float velocidad;
     private Vector3 gravedad = new Vector3(0f, 9.8f, 0f);
     private Vector3 gravedad2 = new Vector3(0f, -9.8f, 0f);
-    bool enter = false;
-    bool salir = false;
     private bool puedoSaltar;
     public LayerMask layerSuelo;
     public float fuerzaSalto;
