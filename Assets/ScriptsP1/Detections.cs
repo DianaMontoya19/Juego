@@ -76,20 +76,22 @@ public class Detections : MonoBehaviour
                 ListaCamaras[0].gameObject.SetActive(false);
 
 
-         
+                GemActivate = false;
+                Player1 = false;
+
 
             }
 
 
-                
-            if (collision.gameObject.CompareTag("Floor3"))
-              {
-                    ListaCamaras[0].gameObject.SetActive(true);
-                    ListaCamaras[1].gameObject.SetActive(false);
-                    
 
-              }
  
+        }
+        if (collision.gameObject.CompareTag("Floor3"))
+        {
+            ListaCamaras[0].gameObject.SetActive(true);
+            ListaCamaras[1].gameObject.SetActive(false);
+
+
         }
     }
 
