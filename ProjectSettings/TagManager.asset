@@ -20,6 +20,7 @@ TagManager:
   - Caja2
   - pendulo
   - JumpingRea
+  - End
   layers:
   - Default
   - TransparentFX
